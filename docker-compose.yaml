@@ -1,0 +1,23 @@
+# docker build --build-arg domain={domain} -t lampa .
+# docker run -p 8080:80 -d --restart unless-stopped -it --name lampa lampa
+services:
+  lampa1:
+    image: lampa
+    build:
+      context: ./lampa/.
+      dockerfile: Dockerfile
+      args:
+        - domain={domain}
+    ports:
+      - "8081:80"
+    restart: unless-stopped
+    container_name: lampa1
+  
+  ubuntu-test1:
+    image: ubuntu
+    container_name: ubuntu-test1
+    command: /data/torrserver
+    volumes:
+      - ./data:/data
+    ports:
+      - "8090:8090"
