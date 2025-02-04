@@ -20,6 +20,9 @@ Now you can open your web browser and enter the web address of your server.
   
       curl 2ip.ru
 
+- Now open in browser address of your Lampa server (previous step).
+
+      http://<your_server_ip_address>
 ---
 
 ## Client Side
